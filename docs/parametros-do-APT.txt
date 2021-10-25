@@ -1,0 +1,39 @@
+Quando vamos utilizar o Ansible para instalar pacotes nas nossas máquinas, 
+devemos utilizar o comando apt: junto com alguns parâmetros, 
+que ajudam o apt a definir o que deve ser instalado e atualizado.
+
+Selecione os parâmetros necessários para instalar o NodeJS em uma máquina.
+
+-------------------------------------------------------------------------
+
+apt:
+      pkg:
+      - nodejs
+      update_cache: yes
+    become: yes
+    
+Com todos os parâmetros, a instalação pode correr sem problemas, 
+essa é a forma mais garantida de instalar os pacotes mais recentes na máquina escolhida.
+
+--------------------------------------------------------------------------
+
+apt:
+      pkg:
+      - nodejs
+    become: yes
+    
+O comando funciona sem o parâmetro update_cache: yes, porém pode ser instalado 
+uma versão mais antiga do pacote, então deve-se tomar um pouco de cuidado.
+
+---------------------------------------------------------------------------
+
+apt:
+      pkg:
+      - nodejs
+      update_cache: yes
+      
+O comando funciona sem o parâmetro become: yes, porém deve-se atentar 
+a qual usuário está sendo usado, já que o become: yes permite a execução como root, 
+então se for utilizado um usuário que não tenha as mesmas permissões do root, a instalação irá falhar.
+
+----------------------------------------------------------------------------

@@ -1,0 +1,10 @@
+Ao criarmos máquinas na EC2 precisamos nos conectar com ela para fazer alterações, 
+e essa conexão pode ser realizada de várias maneiras e para fazermos essa conexão 
+de uma maneira específica criamos um par de chaves.
+
+Selecione a alternativa de qual tipo de conexão utiliza o par de chaves.
+
+SSH
+
+ Para nos conectarmos na máquina via SSH temos que usar o par de chave, 
+ já que as máquinas da AWS não suportam conexão SSH com senha a unica opção é o acesso via chaves.

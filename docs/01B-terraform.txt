@@ -1,0 +1,52 @@
+Na pasta do projeto
+
+Arquivo main.tf
+
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 3.27"
+    }
+  }
+
+  required_version = ">= 0.14.9"
+}
+
+provider "aws" {
+  profile = "default"
+  region  = "us-east-1"
+}
+
+resource "aws_instance" "app_server" {
+  ami           = "ami-09e67e426f25ce0d7"
+  instance_type = "t2.micro"
+
+  tags = {
+    Name = "Primeira instancia"
+  }
+}
+
+--------------------------------------------------
+
+O bloco terraform {} descreve as configurações do terraform, como com qual provedor 
+iremos nos conectar e quais os plugins que o terraform deve importar.
+
+No bloco de provider {} podemos colocar várias características relacionadas com o provedor diretamente, 
+inclusive se tivermos múltiplos provedores teremos múltiplos deste blocos, um para cada provider.
+
+No bloco de resource {} vamos colocar todas as configurações relacionadas com o recurso que queremos criar, 
+podendo ser instâncias, bancos de dados, entre outras opções.
+
+--------------------------------------------------
+
+terraform init
+
+terraform plan
+
+terraform apply
+
+--------------------------------------------------
+
+terraform destroy
+

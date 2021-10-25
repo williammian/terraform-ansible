@@ -1,0 +1,7 @@
+acessar maquina via ssh
+
+entrar na pasta tcc
+
+. venv/bin/activate
+
+pip freeze

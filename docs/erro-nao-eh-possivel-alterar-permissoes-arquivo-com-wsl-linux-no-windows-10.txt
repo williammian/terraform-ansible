@@ -1,0 +1,20 @@
+Entrar no WSL Ubuntu
+
+Ir até a pasta /etc
+
+Criar o arquivo wsl.conf
+
+Colocar o seguinte conteúdo
+
+-------------------------
+
+[automount]
+options = "metadata"
+
+---------------------------
+
+Reiniciar as instâncias WSL
+
+Ir em Serviços (do Windows)
+
+Reiniciar o serviço LxssManager

@@ -1,0 +1,23 @@
+Arquivo playbook.yml
+
+- hosts: terraform-ansible
+  tasks:
+  - name: criando o arquivo
+    copy:
+      dest: /home/ubuntu/index.html
+      content: <h1>Feito com terraform e ansible</h1>
+  - name: criando o servidor
+    shell: "nohup busybox httpd -f -p 8080 &"
+    
+-------------------------------------------------
+
+Arquivo hosts.yml
+
+[terraform-ansible]
+18.208.144.230
+
+-------------------------------------------------
+
+Comando
+
+ansible-playbook playbook.yml -u ubuntu --private-key iac-alura.pem -i hosts.yml

@@ -1,0 +1,21 @@
+entrar na pasta tcc/setup
+
+nano settings.py
+
+Alterar 
+
+ALLOWED_HOSTS = []
+
+para 
+
+ALLOWED_HOSTS = ['*']
+
+salvar arquivo
+
+voltar para a pasta tcc
+
+python manage.py runserver 0.0.0.0:8000
+
+abrir browser
+
+http://3.87.223.179:8000/

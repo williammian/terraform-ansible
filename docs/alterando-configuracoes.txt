@@ -1,0 +1,25 @@
+As configurações dos projetos Django ficam em um arquivo chamado settings.py, 
+localizado dentro do projeto na pasta setup, e é criado automaticamente pelo 
+Django ao iniciarmos o projeto, porém nem todas as configurações padrões são as que gostaríamos, 
+então precisamos alterar o arquivo e o Ansible pode nos ajudar nisso.
+
+Selecione as alternativas com os parâmetros necessários do lineinfile: 
+para alterar apenas as configurações do ALLOWED_HOSTS = [] para ALLOWED_HOSTS = [“*”].
+
+
+path: /home/ubuntu/tcc/setup/settings.py
+regexp: 'ALLOWED_HOSTS'
+line: 'ALLOWED_HOSTS = ["*"]'
+backrefs: yes
+
+Com todos os parâmetros a substituição da linha será realizada e teremos o arquivo com o 'ALLOWED_HOSTS = ["*"]'.
+ 
+--------------------------------------------
+
+path: /home/ubuntu/tcc/setup/settings.py
+regexp: 'ALLOWED_HOSTS'
+line: 'ALLOWED_HOSTS = ["*"]'
+
+A substituição da linha será realizada e teremos o arquivo com o 'ALLOWED_HOSTS = ["*"]', porém devemos tomar cuidado, pois o arquivo pode ser alterado pela falta do parâmetro backrefs: yes.
+
+--------------------------------------------
